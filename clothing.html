@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyle Clothing — Men's Shirts &amp; Pants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+
+  /* ============================================================
+     KYLE CLOTHING — Myntra-inspired vibrant redesign
+  ============================================================ */
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap');
+
+  :root{
+    /* Core palette */
+    --white:#FFFFFF;
+    --off:#F8F4FF;
+    --ink:#1A1028;
+    --ink-soft:#6B6580;
+    --line:#E8E2F4;
+
+    /* Brand accent — deep violet-magenta */
+    --brand:#6C2BD9;
+    --brand-dark:#4E1FA0;
+    --brand-light:#EDE7FF;
+
+    /* Vivid accent 2 — coral-pink */
+    --coral:#FF4D73;
+    --coral-light:#FFE4EB;
+
+    /* Gold highlight */
+    --gold:#F5A623;
+    --gold-light:#FEF3DC;
+
+    /* Success */
+    --green:#00B37E;
+    --green-light:#D6F5EC;
+
+    /* Gradient definitions */
+    --grad-hero: linear-gradient(135deg, #6C2BD9 0%, #C026D3 50%, #FF4D73 100%);
+    --grad-badge: linear-gradient(90deg, #FF4D73, #F5A623);
+    --grad-sale: linear-gradient(90deg, #6C2BD9, #C026D3);
+    --grad-card: linear-gradient(160deg,#EDE7FF,#FFE4EB);
+
+    --display:'Playfair Display', serif;
+    --body:'Poppins', sans-serif;
+
+    --radius-sm:8px;
+    --radius-md:14px;
+    --radius-lg:22px;
+    --radius-xl:32px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:#F8F4FF;
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:var(--body);}
+
+  .wrap{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  /* ===== Marquee top bar ===== */
+  .topbar{
+    background:var(--grad-hero);
+    color:#fff;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    overflow:hidden;
+    padding:9px 0;
+  }
+  .marquee-track{
+    display:flex;
+    gap:0;
+    animation:marquee 28s linear infinite;
+    white-space:nowrap;
+  }
+  .marquee-item{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:0 36px;
+  }
+  .marquee-item::before{
+    content:'✦';
+    font-size:9px;
+    opacity:0.7;
+  }
+  @keyframes marquee{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-50%); }
+  }
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;
+    top:0;
+    z-index:60;
+    background:rgba(255,255,255,0.94);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 2px 20px rgba(108,43,217,0.08);
+  }
+
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 40px;
+    max-width:1200px;
+    margin:0 auto;
+  }
+
+  .logo{
+    font-family:var(--display);
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    background:var(--grad-hero);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+
+  .nav-links{
+    display:flex;
+    gap:32px;
+    list-style:none;
+  }
+
+  .nav-links a{
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink-soft);
+    transition:color 0.2s ease;
+    position:relative;
+    padding-bottom:4px;
+  }
+
+  .nav-links a:hover{ color:var(--brand); }
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0; bottom:0;
+    width:0; height:2px;
+    background:var(--grad-hero);
+    border-radius:2px;
+    transition:width 0.25s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+
+  .nav-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+
+  .icon-btn{
+    background:var(--brand-light);
+    border:none;
+    cursor:pointer;
+    color:var(--brand);
+    font-size:13.5px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    border-radius:var(--radius-xl);
+    transition:all 0.25s ease;
+  }
+  .icon-btn:hover{
+    background:var(--brand);
+    color:#fff;
+  }
+
+  .cart-count{
+    background:var(--coral);
+    color:#fff;
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    font-size:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    animation:pulse-badge 2s ease-in-out infinite;
+  }
+  @keyframes pulse-badge{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+  }
+
+  .menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    flex-direction:column;
+    gap:5px;
+  }
+  .menu-toggle span{ width:22px; height:2px; background:var(--ink); border-radius:2px; }
+
+  /* ===== Hero ===== */
+  .hero{
+    padding:0;
+    position:relative;
+    overflow:hidden;
+    background:var(--grad-hero);
+    min-height:560px;
+  }
+
+  /* Animated background blobs */
+  .hero::before{
+    content:'';
+    position:absolute;
+    width:600px; height:600px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.07);
+    top:-150px; right:-100px;
+    animation:blob-float 8s ease-in-out infinite;
+  }
+  .hero::after{
+    content:'';
+    position:absolute;
+    width:400px; height:400px;
+    border-radius:50%;
+    background:rgba(255,77,115,0.15);
+    bottom:-100px; left:200px;
+    animation:blob-float 10s ease-in-out infinite reverse;
+  }
+  @keyframes blob-float{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    50%{ transform:translate(30px,-20px) scale(1.05); }
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:50px;
+    align-items:center;
+    min-height:560px;
+    position:relative;
+    z-index:2;
+    padding:60px 40px;
+    max-width:1200px;
+    margin:0 auto;
+  }
+
+  .hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:22px;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.3);
+    backdrop-filter:blur(8px);
+    padding:6px 14px;
+    border-radius:var(--radius-xl);
+  }
+  .hero-eyebrow .dot{
+    width:7px; height:7px;
+    border-radius:50%;
+    background:#fff;
+    animation:dot-pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes dot-pulse{
+    0%,100%{opacity:1; transform:scale(1);}
+    50%{opacity:0.5; transform:scale(0.7);}
+  }
+  .hero-eyebrow .tag-label{
+    color:rgba(255,255,255,0.9);
+    letter-spacing:0.12em;
+    font-size:11px;
+  }
+
+  .hero h1{
+    font-family:var(--display);
+    font-size:clamp(36px, 4.8vw, 62px);
+    font-weight:700;
+    line-height:1.1;
+    letter-spacing:-0.015em;
+    margin-bottom:20px;
+    color:#fff;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:600;
+    color:#FFD6E0;
+  }
+
+  .hero p.sub{
+    font-size:16px;
+    color:rgba(255,255,255,0.82);
+    max-width:440px;
+    margin-bottom:34px;
+    line-height:1.65;
+  }
+
+  .hero-actions{ display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 28px;
+    font-size:13.5px;
+    font-weight:700;
+    border-radius:var(--radius-xl);
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:all 0.28s cubic-bezier(0.34,1.56,0.64,1);
+    letter-spacing:0.02em;
+    position:relative;
+    overflow:hidden;
+  }
+  .btn::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0);
+    transition:background 0.2s ease;
+  }
+  .btn:hover::after{ background:rgba(255,255,255,0.1); }
+
+  .btn-primary{
+    background:#fff;
+    color:var(--brand);
+    box-shadow:0 4px 20px rgba(0,0,0,0.15);
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 32px rgba(0,0,0,0.22);
+  }
+  .btn-ghost{
+    background:transparent;
+    color:#fff;
+    border-color:rgba(255,255,255,0.5);
+  }
+  .btn-ghost:hover{
+    background:rgba(255,255,255,0.12);
+    border-color:#fff;
+    transform:translateY(-2px);
+  }
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    background:var(--grad-card);
+    box-shadow:0 30px 80px rgba(0,0,0,0.3);
+    transform:rotate(1.5deg);
+    transition:transform 0.4s ease;
+  }
+  .hero-visual:hover{ transform:rotate(0deg) scale(1.01); }
+  .hero-visual img{ width:100%; height:100%; object-fit:cover; }
+
+  .hero-visual .float-tag{
+    position:absolute;
+    bottom:20px; left:20px;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(12px);
+    padding:12px 16px;
+    border-radius:var(--radius-md);
+    box-shadow:0 12px 40px rgba(108,43,217,0.25);
+    display:flex; align-items:center; gap:12px;
+    animation:float-card 3s ease-in-out infinite;
+  }
+  @keyframes float-card{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-5px); }
+  }
+  .float-tag .swatch{
+    width:32px; height:32px;
+    border-radius:50%;
+    background:var(--grad-hero);
+    flex-shrink:0;
+    box-shadow:0 4px 12px rgba(108,43,217,0.4);
+  }
+  .float-tag .ft-title{ font-size:13px; font-weight:700; color:var(--ink); }
+  .float-tag .ft-sub{ font-size:11px; color:var(--brand); font-weight:600; }
+
+  .swatch-strip{
+    display:flex; gap:0;
+    margin-top:36px; padding-top:28px;
+    border-top:1px solid rgba(255,255,255,0.2);
+  }
+  .swatch-strip-item{
+    flex:1;
+    text-align:left;
+    padding-right:20px;
+    position:relative;
+  }
+  .swatch-strip-item:not(:last-child)::after{
+    content:'';
+    position:absolute;
+    right:0; top:4px; bottom:4px;
+    width:1px;
+    background:rgba(255,255,255,0.2);
+  }
+  .swatch-strip-item:not(:first-child){ padding-left:20px; }
+  .swatch-strip-item .num{
+    font-family:var(--display);
+    font-size:26px;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:2px;
+    line-height:1;
+  }
+  .swatch-strip-item .lbl{ font-size:11.5px; color:rgba(255,255,255,0.7); font-weight:500; }
+
+  .tag-label{
+    font-family:var(--body);
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brand);
+  }
+
+  /* ===== Sections ===== */
+  .section{ padding:72px 0; }
+
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:36px;
+    gap:20px;
+  }
+  .section-head h2{
+    font-family:var(--display);
+    font-size:clamp(24px, 3vw, 36px);
+    font-weight:700;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    position:relative;
+  }
+  .section-head h2::after{
+    content:'';
+    position:absolute;
+    bottom:-8px; left:0;
+    width:48px; height:4px;
+    background:var(--grad-hero);
+    border-radius:4px;
+  }
+  .section-alt{ background:#fff; }
+
+  /* ===== Category strip ===== */
+  .category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+  .category-card{
+    position:relative;
+    aspect-ratio:3/4;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    background:var(--grad-card);
+    cursor:pointer;
+    border:none;
+    text-align:left;
+    padding:0;
+    transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+    box-shadow:0 4px 20px rgba(108,43,217,0.1);
+  }
+  .category-card:hover{
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 20px 50px rgba(108,43,217,0.22);
+  }
+  .category-card img{ width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease; }
+  .category-card:hover img{ transform:scale(1.08); }
+  .category-card::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(26,16,40,0.8) 0%, transparent 55%);
+  }
+  .category-card .cc-label{
+    position:absolute; bottom:18px; left:18px;
+    color:#fff; z-index:2;
+  }
+  .category-card .cc-label .tag-label{
+    color:rgba(255,255,255,0.7);
+    font-size:10px;
+  }
+  .category-card .cc-label h3{
+    font-family:var(--display);
+    font-size:20px;
+    font-weight:700;
+    margin-top:4px;
+    color:#fff;
+  }
+
+  /* Shop Now pill on category hover */
+  .category-card .cc-cta{
+    position:absolute; bottom:18px; right:18px;
+    z-index:2;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.4);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    padding:6px 12px;
+    border-radius:30px;
+    opacity:0;
+    transform:translateX(10px);
+    transition:all 0.3s ease;
+    backdrop-filter:blur(4px);
+    white-space:nowrap;
+  }
+  .category-card:hover .cc-cta{ opacity:1; transform:translateX(0); }
+
+  /* ===== Filter chips ===== */
+  .filter-bar{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .filter-chip{
+    padding:9px 20px;
+    border:2px solid var(--line);
+    background:#fff;
+    border-radius:var(--radius-xl);
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.22s cubic-bezier(0.34,1.56,0.64,1);
+    color:var(--ink-soft);
+  }
+  .filter-chip:hover{
+    border-color:var(--brand);
+    color:var(--brand);
+    transform:translateY(-1px);
+  }
+  .filter-chip.active{
+    background:var(--grad-sale);
+    color:#fff;
+    border-color:transparent;
+    box-shadow:0 4px 14px rgba(108,43,217,0.35);
+  }
+
+  /* ===== Product grid ===== */
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px 20px;
+  }
+  .product-card{
+    position:relative;
+    background:#fff;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:0 2px 14px rgba(108,43,217,0.07);
+    transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+  }
+  .product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 48px rgba(108,43,217,0.18);
+  }
+  .product-photo{
+    position:relative;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    background:var(--grad-card);
+  }
+  .product-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    transition:transform 0.5s ease;
+  }
+  .product-card:hover .product-photo img{ transform:scale(1.07); }
+
+  /* Wishlist heart button */
+  .product-photo .wish-btn{
+    position:absolute;
+    top:10px; right:10px;
+    width:34px; height:34px;
+    border-radius:50%;
+    background:#fff;
+    border:none;
+    cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    opacity:0;
+    transform:scale(0.8);
+    transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    z-index:3;
+  }
+  .product-card:hover .wish-btn{ opacity:1; transform:scale(1); }
+  .wish-btn:hover{ background:var(--coral-light); }
+
+  .product-photo .quick-add{
+    position:absolute;
+    bottom:0; left:0; right:0;
+    background:var(--grad-sale);
+    color:#fff;
+    text-align:center;
+    padding:12px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.05em;
+    opacity:0;
+    transform:translateY(100%);
+    transition:all 0.3s ease;
+    cursor:pointer;
+    border:none;
+    width:100%;
+  }
+  .product-card:hover .quick-add{ opacity:1; transform:translateY(0); }
+  .quick-add.added{
+    background:linear-gradient(90deg,#00B37E,#00965E);
+    color:#fff;
+  }
+
+  .product-photo .badge{
+    position:absolute; top:10px; left:10px;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.06em;
+    padding:4px 10px;
+    border-radius:var(--radius-xl);
+    text-transform:uppercase;
+    z-index:2;
+  }
+  .badge-new{
+    background:var(--grad-badge);
+    color:#fff;
+    box-shadow:0 3px 12px rgba(245,166,35,0.4);
+  }
+  .badge-bestseller{
+    background:var(--brand);
+    color:#fff;
+    box-shadow:0 3px 12px rgba(108,43,217,0.4);
+  }
+
+  .product-info{
+    padding:14px 16px 16px;
+  }
+  .product-info .p-type{
+    display:inline-block;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--brand);
+    background:var(--brand-light);
+    padding:3px 8px;
+    border-radius:4px;
+    margin-bottom:6px;
+  }
+  .product-info h4{
+    font-size:13.5px;
+    font-weight:600;
+    margin-bottom:8px;
+    color:var(--ink);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .product-info .price-row{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+  }
+  .product-info .price{
+    font-family:var(--body);
+    font-size:17px;
+    font-weight:800;
+    color:var(--ink);
+  }
+  .product-info .price-old{
+    font-size:13px;
+    color:var(--ink-soft);
+    text-decoration:line-through;
+  }
+  .product-info .discount-pct{
+    font-size:11px;
+    font-weight:700;
+    color:var(--coral);
+  }
+
+  .no-results{
+    text-align:center;
+    padding:60px 0;
+    color:var(--ink-soft);
+    grid-column:1 / -1;
+  }
+
+  /* ===== Promo band ===== */
+  .promo-band{
+    background:var(--grad-hero);
+    padding:52px 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .promo-band::before{
+    content:'';
+    position:absolute;
+    width:400px; height:400px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.07);
+    top:-150px; right:80px;
+  }
+  .promo-band .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+  }
+  .promo-band .pb-text{ color:#fff; }
+  .promo-band h2{
+    font-family:var(--display);
+    font-size:clamp(22px,3vw,32px);
+    font-weight:700;
+    max-width:440px;
+    line-height:1.2;
+    margin-bottom:8px;
+  }
+  .promo-band p{
+    color:rgba(255,255,255,0.75);
+    font-size:14px;
+    max-width:380px;
+  }
+  .promo-band .btn-primary{
+    background:#fff;
+    color:var(--brand);
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .promo-band .btn-primary:hover{
+    background:var(--gold);
+    color:#fff;
+  }
+
+  /* ===== Features strip ===== */
+  .features-strip{
+    background:#fff;
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .features-strip .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .feat-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .feat-icon{
+    width:42px; height:42px;
+    border-radius:var(--radius-sm);
+    display:flex; align-items:center; justify-content:center;
+    font-size:20px;
+    flex-shrink:0;
+  }
+  .feat-icon.purple{ background:var(--brand-light); }
+  .feat-icon.pink{ background:var(--coral-light); }
+  .feat-icon.gold{ background:var(--gold-light); }
+  .feat-icon.green{ background:var(--green-light); }
+  .feat-item h6{ font-size:13px; font-weight:700; color:var(--ink); margin-bottom:2px; }
+  .feat-item p{ font-size:11.5px; color:var(--ink-soft); }
+
+  /* ===== Footer ===== */
+  footer{
+    background:#fff;
+    border-top:1px solid var(--line);
+    padding:56px 0 30px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:44px;
+  }
+  .footer-brand .logo{ margin-bottom:12px; display:inline-block; }
+  .footer-brand p{ color:var(--ink-soft); font-size:14px; max-width:280px; line-height:1.6; }
+
+  .footer-socials{
+    display:flex; gap:10px; margin-top:20px;
+  }
+  .social-pill{
+    width:36px; height:36px;
+    border-radius:50%;
+    background:var(--brand-light);
+    color:var(--brand);
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px;
+    font-weight:700;
+    transition:all 0.2s ease;
+    text-decoration:none;
+  }
+  .social-pill:hover{
+    background:var(--brand);
+    color:#fff;
+    transform:translateY(-2px);
+  }
+
+  .footer-col h5{
+    font-size:12.5px;
+    font-weight:700;
+    margin-bottom:16px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--ink);
+  }
+  .footer-col ul{ list-style:none; }
+  .footer-col li{ margin-bottom:10px; }
+  .footer-col a{
+    color:var(--ink-soft);
+    font-size:14px;
+    transition:color 0.2s ease;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .footer-col a:hover{ color:var(--brand); }
+  .footer-bottom{
+    border-top:1px solid var(--line);
+    padding-top:22px;
+    display:flex;
+    justify-content:space-between;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .footer-badges{ display:flex; gap:8px; }
+  .f-badge{
+    background:var(--brand-light);
+    color:var(--brand);
+    font-size:10px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:20px;
+    letter-spacing:0.04em;
+  }
+
+  /* ===== Cart drawer ===== */
+  .overlay{
+    position:fixed; inset:0;
+    background:rgba(26,16,40,0.55);
+    z-index:80;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.3s ease;
+    backdrop-filter:blur(3px);
+  }
+  .overlay.open{ opacity:1; pointer-events:auto; }
+
+  .cart-drawer{
+    position:fixed;
+    top:0; right:0;
+    height:100%;
+    width:430px;
+    max-width:92vw;
+    background:#fff;
+    z-index:90;
+    display:flex;
+    flex-direction:column;
+    transform:translateX(100%);
+    transition:transform 0.38s cubic-bezier(0.32,0.72,0,1);
+    box-shadow:-20px 0 60px rgba(108,43,217,0.18);
+  }
+  .cart-drawer.open{ transform:translateX(0); }
+
+  .cart-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 24px 18px;
+    border-bottom:2px solid var(--line);
+    background:var(--brand-light);
+  }
+  .cart-header h3{
+    font-family:var(--display);
+    font-size:22px;
+    font-weight:700;
+    color:var(--brand);
+  }
+  .cart-close{
+    background:var(--brand);
+    border:none;
+    cursor:pointer;
+    width:32px; height:32px;
+    border-radius:50%;
+    font-size:18px;
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    transition:all 0.2s ease;
+  }
+  .cart-close:hover{
+    background:var(--coral);
+    transform:rotate(90deg);
+  }
+
+  .cart-items{
+    flex:1;
+    overflow-y:auto;
+    padding:18px 24px;
+  }
+
+  .cart-empty{
+    text-align:center;
+    color:var(--ink-soft);
+    padding:60px 10px;
+    font-size:14px;
+  }
+  .cart-empty::before{
+    content:'🛒';
+    display:block;
+    font-size:40px;
+    margin-bottom:12px;
+  }
+
+  .cart-item{
+    display:flex;
+    gap:14px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+    animation:slideIn 0.3s ease;
+  }
+  @keyframes slideIn{
+    from{ opacity:0; transform:translateX(20px); }
+    to{ opacity:1; transform:translateX(0); }
+  }
+  .cart-item img{
+    width:72px; height:88px;
+    object-fit:cover;
+    border-radius:var(--radius-sm);
+    background:var(--grad-card);
+    flex-shrink:0;
+  }
+  .ci-info{ flex:1; min-width:0; }
+  .ci-info h4{ font-size:13.5px; font-weight:600; margin-bottom:3px; }
+  .ci-info .ci-meta{ font-size:11.5px; color:var(--ink-soft); margin-bottom:8px; }
+  .ci-info .ci-price{
+    font-size:15px;
+    font-weight:800;
+    color:var(--brand);
+  }
+
+  .qty-row{
+    display:flex;
+    align-items:center;
+    gap:0;
+    margin-top:8px;
+  }
+  .qty-btn{
+    width:28px; height:28px;
+    border:2px solid var(--line);
+    background:#fff;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--brand);
+    border-radius:var(--radius-sm);
+    transition:all 0.2s ease;
+  }
+  .qty-btn:hover{ background:var(--brand); color:#fff; border-color:var(--brand); }
+  .qty-val{
+    width:36px;
+    text-align:center;
+    font-size:14px;
+    font-weight:700;
+    height:28px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--brand-light);
+    color:var(--brand);
+    margin:0 2px;
+    border-radius:4px;
+  }
+  .ci-remove{
+    margin-left:auto;
+    background:var(--coral-light);
+    border:none;
+    cursor:pointer;
+    font-size:11.5px;
+    color:var(--coral);
+    font-weight:600;
+    padding:4px 10px;
+    border-radius:var(--radius-xl);
+    transition:all 0.2s ease;
+  }
+  .ci-remove:hover{ background:var(--coral); color:#fff; }
+
+  .cart-footer{
+    border-top:2px solid var(--line);
+    padding:20px 24px 26px;
+  }
+  .cart-subtotal{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:15px;
+    margin-bottom:16px;
+    font-weight:600;
+  }
+  .cart-subtotal .amt{
+    font-size:20px;
+    font-weight:800;
+    color:var(--brand);
+  }
+
+  .whatsapp-btn{
+    width:100%;
+    background:linear-gradient(90deg,#25D366,#1FAE54);
+    color:#fff;
+    border:none;
+    padding:16px;
+    font-size:15px;
+    font-weight:700;
+    border-radius:var(--radius-md);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    box-shadow:0 6px 20px rgba(37,211,102,0.35);
+  }
+  .whatsapp-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(37,211,102,0.45);
+  }
+  .whatsapp-btn svg{ width:20px; height:20px; flex-shrink:0; }
+
+  .cart-note{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    text-align:center;
+    margin-top:10px;
+  }
+
+  /* ===== Toast ===== */
+  .toast{
+    position:fixed;
+    bottom:28px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--grad-sale);
+    color:#fff;
+    padding:13px 24px;
+    border-radius:var(--radius-xl);
+    font-size:13.5px;
+    font-weight:600;
+    z-index:200;
+    opacity:0;
+    pointer-events:none;
+    transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    box-shadow:0 8px 30px rgba(108,43,217,0.35);
+    white-space:nowrap;
+  }
+  .toast::before{ content:'✓  '; }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ===== Responsive ===== */
+  @media (max-width:980px){
+    .hero-grid{ grid-template-columns:1fr; padding:40px 20px; }
+    .hero-visual{ order:-1; max-width:420px; transform:none; }
+    .category-grid{ grid-template-columns:repeat(2,1fr); }
+    .product-grid{ grid-template-columns:repeat(2,1fr); }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+    .promo-band .wrap{ flex-direction:column; align-items:flex-start; }
+    .features-strip .wrap{ grid-template-columns:repeat(2,1fr); }
+  }
+
+  @media (max-width:760px){
+    .wrap{ padding:0 20px; }
+    .nav{ padding:14px 20px; }
+    .nav-links{ display:none; }
+    .menu-toggle{ display:flex; }
+    .swatch-strip{ flex-wrap:wrap; }
+    .swatch-strip-item{ flex:1 1 45%; }
+    .category-grid{ grid-template-columns:1fr 1fr; gap:12px; }
+    .product-grid{ grid-template-columns:1fr 1fr; gap:14px 12px; }
+    .section{ padding:48px 0; }
+    .section-head{ flex-direction:column; align-items:flex-start; gap:10px; }
+    .promo-band{ padding:36px 0; }
+    .footer-grid{ grid-template-columns:1fr 1fr; gap:28px; }
+    .footer-bottom{ flex-direction:column; gap:10px; text-align:center; }
+    .cart-drawer{ width:100%; }
+    .features-strip .wrap{ grid-template-columns:repeat(2,1fr); gap:14px; }
+    .topbar{ font-size:11px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; animation:none !important; }
+  }
+
+  /* ===== Entry animations ===== */
+  @keyframes fadeUp{
+    from{ opacity:0; transform:translateY(24px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .hero .hero-grid > *{
+    animation:fadeUp 0.7s ease both;
+  }
+  .hero .hero-grid > *:nth-child(2){ animation-delay:0.15s; }
+
+  /* ===== Offer Banners ===== */
+  .offer-banners{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .offer-card{
+    position:relative;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    min-height:220px;
+    display:flex;
+    align-items:flex-end;
+    cursor:pointer;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .offer-card:hover{ transform:translateY(-4px); box-shadow:0 16px 48px rgba(108,43,217,0.22); }
+  .offer-card img{
+    position:absolute; inset:0;
+    width:100%; height:100%; object-fit:cover;
+    transition:transform 0.5s ease;
+  }
+  .offer-card:hover img{ transform:scale(1.06); }
+  .offer-card::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(26,16,40,0.85) 0%, rgba(26,16,40,0.1) 55%, transparent 100%);
+  }
+  .offer-card-body{
+    position:relative; z-index:2;
+    padding:22px 22px 24px; color:#fff; width:100%;
+  }
+  .offer-pill{
+    display:inline-block;
+    background:var(--coral); color:#fff;
+    font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+    padding:4px 12px; border-radius:30px; margin-bottom:8px;
+  }
+  .offer-card-body h3{
+    font-family:var(--display); font-size:22px; font-weight:700;
+    margin-bottom:6px; line-height:1.2;
+  }
+  .offer-card-body p{ font-size:13px; color:rgba(255,255,255,0.75); margin-bottom:14px; }
+  .offer-cta{
+    display:inline-flex; align-items:center; gap:6px;
+    background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.4);
+    color:#fff; font-size:12.5px; font-weight:700;
+    padding:8px 16px; border-radius:30px;
+    backdrop-filter:blur(4px); transition:all 0.25s ease;
+    cursor:pointer; text-decoration:none;
+  }
+  .offer-cta:hover{ background:#fff; color:var(--brand); border-color:#fff; }
+
+  /* ===== Lookbook ===== */
+  .lookbook-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr 0.8fr;
+    grid-template-rows:auto auto;
+    gap:14px;
+  }
+  .lk-card{
+    position:relative; border-radius:var(--radius-md); overflow:hidden;
+    background:var(--grad-card); cursor:pointer;
+    transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+  }
+  .lk-card:hover{ transform:scale(1.02); box-shadow:0 18px 48px rgba(108,43,217,0.22); }
+  .lk-card img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease; }
+  .lk-card:hover img{ transform:scale(1.06); }
+  .lk-card-tall{ grid-row:span 2; min-height:500px; }
+  .lk-card-short{ aspect-ratio:4/3; }
+  .lk-card::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(26,16,40,0.65) 0%, transparent 55%);
+    opacity:0; transition:opacity 0.3s ease;
+  }
+  .lk-card:hover::after{ opacity:1; }
+  .lk-card-label{
+    position:absolute; bottom:16px; left:16px; z-index:2; color:#fff;
+    opacity:0; transform:translateY(8px); transition:all 0.3s ease;
+  }
+  .lk-card:hover .lk-card-label{ opacity:1; transform:translateY(0); }
+  .lk-card-label span{
+    display:block; font-size:11px; font-weight:700; letter-spacing:0.1em;
+    text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:3px;
+  }
+  .lk-card-label h4{ font-family:var(--display); font-size:17px; font-weight:700; }
+
+  /* ===== Brand Story ===== */
+  .brand-story{
+    display:grid; grid-template-columns:1fr 1fr; gap:0;
+    border-radius:var(--radius-lg); overflow:hidden; min-height:400px;
+  }
+  .bs-image{ position:relative; overflow:hidden; }
+  .bs-image img{ width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease; }
+  .brand-story:hover .bs-image img{ transform:scale(1.04); }
+  .bs-content{
+    background:var(--grad-hero); padding:52px 46px;
+    display:flex; flex-direction:column; justify-content:center; color:#fff;
+  }
+  .bs-eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25);
+    padding:5px 14px; border-radius:30px; font-size:10.5px; font-weight:700;
+    letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.85);
+    margin-bottom:20px; width:fit-content;
+  }
+  .bs-content h2{
+    font-family:var(--display); font-size:clamp(24px,3vw,36px); font-weight:700;
+    line-height:1.15; margin-bottom:16px; color:#fff;
+  }
+  .bs-content h2 em{ font-style:italic; color:#FFD6E0; }
+  .bs-content p{ font-size:15px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:26px; }
+  .bs-stats{ display:flex; gap:28px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.2); }
+  .bs-stat .num{
+    font-family:var(--display); font-size:28px; font-weight:700;
+    color:#fff; line-height:1; margin-bottom:4px;
+  }
+  .bs-stat .lbl{ font-size:12px; color:rgba(255,255,255,0.65); font-weight:500; }
+
+  /* ===== Style Inspiration / Instagram Wall ===== */
+  .style-grid{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:10px;
+  }
+  .style-cell{
+    position:relative; aspect-ratio:1; border-radius:var(--radius-sm);
+    overflow:hidden; cursor:pointer;
+  }
+  .style-cell img{ width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; }
+  .style-cell:hover img{ transform:scale(1.1); }
+  .style-cell::after{
+    content:''; position:absolute; inset:0;
+    background:rgba(108,43,217,0); transition:background 0.3s ease;
+  }
+  .style-cell:hover::after{ background:rgba(108,43,217,0.38); }
+  .style-cell-label{
+    position:absolute; inset:0; display:flex;
+    align-items:center; justify-content:center;
+    z-index:2; opacity:0; transition:opacity 0.3s ease;
+    color:#fff; font-size:24px;
+  }
+  .style-cell:hover .style-cell-label{ opacity:1; }
+  .style-section-sub{ font-size:14px; color:var(--ink-soft); margin-top:6px; margin-bottom:32px; }
+
+  /* ===== Responsive additions ===== */
+  @media (max-width:980px){
+    .offer-banners{ grid-template-columns:1fr; }
+    .lookbook-grid{ grid-template-columns:1fr 1fr; }
+    .lk-card-tall{ grid-row:span 1; min-height:260px; }
+    .brand-story{ grid-template-columns:1fr; }
+    .bs-image{ min-height:280px; }
+    .style-grid{ grid-template-columns:repeat(3,1fr); }
+    .style-grid .style-cell:nth-child(n+7){ display:none; }
+  }
+  @media (max-width:760px){
+    .lookbook-grid{ grid-template-columns:1fr 1fr; gap:10px; }
+    .lk-card-tall{ grid-column:span 2; min-height:220px; }
+    .bs-content{ padding:34px 26px; }
+    .bs-stats{ gap:18px; }
+    .style-grid{ grid-template-columns:repeat(3,1fr); gap:6px; }
+    .offer-card-body h3{ font-size:18px; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="marquee-track">
+    <span class="marquee-item">FREE DELIVERY ON ORDERS ABOVE ₹999</span>
+    <span class="marquee-item">NEW SEASON DROP — 40+ FRESH STYLES</span>
+    <span class="marquee-item">100% COTTON BLENDS · PREMIUM QUALITY</span>
+    <span class="marquee-item">ORDER ON WHATSAPP — ZERO FUSS</span>
+    <span class="marquee-item">EASY RETURNS WITHIN 7 DAYS</span>
+    <span class="marquee-item">FREE DELIVERY ON ORDERS ABOVE ₹999</span>
+    <span class="marquee-item">NEW SEASON DROP — 40+ FRESH STYLES</span>
+    <span class="marquee-item">100% COTTON BLENDS · PREMIUM QUALITY</span>
+    <span class="marquee-item">ORDER ON WHATSAPP — ZERO FUSS</span>
+    <span class="marquee-item">EASY RETURNS WITHIN 7 DAYS</span>
+  </div>
+</div>
+
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">Kyle Clothing</a>
+    <ul class="nav-links">
+      <li><a href="#shirts">Shirts</a></li>
+      <li><a href="#pants">Pants</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" aria-label="Cart" id="cartOpenBtn">
+        Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="features-strip">
+  <div class="wrap">
+    <div class="feat-item">
+      <div class="feat-icon purple">🚚</div>
+      <div>
+        <h6>Free Delivery</h6>
+        <p>On orders above ₹999</p>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-icon pink">↩️</div>
+      <div>
+        <h6>Easy Returns</h6>
+        <p>7-day hassle-free policy</p>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-icon gold">✨</div>
+      <div>
+        <h6>100% Authentic</h6>
+        <p>Premium cotton blends</p>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-icon green">💬</div>
+      <div>
+        <h6>WhatsApp Order</h6>
+        <p>Direct & personal service</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          <span class="tag-label">New Season Drop</span>
+        </div>
+        <h1>Sharp shirts,<br>built for <em>everyday.</em></h1>
+        <p class="sub">Checked, formal, and party-wear shirts paired with cargos, jeans, and joggers that fit right and last. Add to cart, then order directly on WhatsApp — no fuss.</p>
+        <div class="hero-actions">
+          <a href="#shirts" class="btn btn-primary">Shop Shirts</a>
+          <a href="#pants" class="btn btn-ghost">Shop Pants</a>
+        </div>
+
+        <div class="swatch-strip">
+          <div class="swatch-strip-item">
+            <div class="num">40+</div>
+            <div class="lbl">Styles in store</div>
+          </div>
+          <div class="swatch-strip-item">
+            <div class="num">100%</div>
+            <div class="lbl">Cotton blends</div>
+          </div>
+          <div class="swatch-strip-item">
+            <div class="num">4.8★</div>
+            <div class="lbl">Average rating</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=900&auto=format&fit=crop" alt="Man wearing a checked shirt">
+        <div class="float-tag">
+          <span class="swatch"></span>
+          <div>
+            <div class="ft-title">Charcoal Check Shirt</div>
+            <div class="ft-sub">₹1,099 · New Arrival</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- ===== Offer Banners ===== -->
+<section class="section" style="padding-top:48px;padding-bottom:48px;">
+  <div class="wrap">
+    <div class="offer-banners">
+      <div class="offer-card">
+        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=900&auto=format&fit=crop" alt="Shirts sale">
+        <div class="offer-card-body">
+          <span class="offer-pill">🔥 Hot Deal</span>
+          <h3>Shirts Starting<br>at ₹799</h3>
+          <p>Checked, formal & party wear — all styles on sale</p>
+          <a href="#shirts" class="offer-cta">Shop Shirts →</a>
+        </div>
+      </div>
+      <div class="offer-card">
+        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=900&auto=format&fit=crop" alt="Pants sale">
+        <div class="offer-card-body">
+          <span class="offer-pill">⚡ New Drop</span>
+          <h3>Pants &amp; Joggers<br>Flat 20% Off</h3>
+          <p>Cargos, jeans, joggers & formal trousers</p>
+          <a href="#pants" class="offer-cta">Shop Pants →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Shop by category</h2>
+    </div>
+    <div class="category-grid">
+      <button class="category-card" data-filter="checked">
+        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=600&auto=format&fit=crop" alt="Checked shirts">
+        <div class="cc-label"><span class="tag-label">Shirts</span><h3>Checked</h3></div>
+        <span class="cc-cta">Shop Now →</span>
+      </button>
+      <button class="category-card" data-filter="formal">
+        <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=600&auto=format&fit=crop" alt="Formal shirts">
+        <div class="cc-label"><span class="tag-label">Shirts</span><h3>Formal</h3></div>
+        <span class="cc-cta">Shop Now →</span>
+      </button>
+      <button class="category-card" data-filter="cargo">
+        <img src="https://images.unsplash.com/photo-1517438476312-10d79c077509?q=80&w=600&auto=format&fit=crop" alt="Cargo pants">
+        <div class="cc-label"><span class="tag-label">Pants</span><h3>Cargo</h3></div>
+        <span class="cc-cta">Shop Now →</span>
+      </button>
+      <button class="category-card" data-filter="jeans">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=600&auto=format&fit=crop" alt="Jeans">
+        <div class="cc-label"><span class="tag-label">Pants</span><h3>Jeans</h3></div>
+        <span class="cc-cta">Shop Now →</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="shirts">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Men's Shirts</h2>
+    </div>
+    <div class="filter-bar" id="shirtFilters">
+      <button class="filter-chip active" data-cat="all">All Shirts</button>
+      <button class="filter-chip" data-cat="checked">Checked</button>
+      <button class="filter-chip" data-cat="formal">Formal</button>
+      <button class="filter-chip" data-cat="party">Party Wear</button>
+      <button class="filter-chip" data-cat="casual">Casual</button>
+    </div>
+    <div class="product-grid" id="shirtGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="pants">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Men's Pants</h2>
+    </div>
+    <div class="filter-bar" id="pantFilters">
+      <button class="filter-chip active" data-cat="all">All Pants</button>
+      <button class="filter-chip" data-cat="cargo">Cargo</button>
+      <button class="filter-chip" data-cat="jeans">Jeans</button>
+      <button class="filter-chip" data-cat="joggers">Joggers</button>
+      <button class="filter-chip" data-cat="trousers">Formal Trousers</button>
+    </div>
+    <div class="product-grid" id="pantGrid"></div>
+  </div>
+</section>
+
+<!-- ===== Lookbook Section ===== -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Style Lookbook</h2>
+    </div>
+    <div class="lookbook-grid">
+      <div class="lk-card lk-card-tall">
+        <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?q=80&w=700&auto=format&fit=crop" alt="Street style joggers">
+        <div class="lk-card-label">
+          <span>Street Style</span>
+          <h4>Joggers & Tee</h4>
+        </div>
+      </div>
+      <div class="lk-card lk-card-short">
+        <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=600&auto=format&fit=crop" alt="Formal office look">
+        <div class="lk-card-label">
+          <span>Office Ready</span>
+          <h4>Formal Shirt</h4>
+        </div>
+      </div>
+      <div class="lk-card lk-card-short">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=600&auto=format&fit=crop" alt="Weekend denim look">
+        <div class="lk-card-label">
+          <span>Weekend Vibe</span>
+          <h4>Slim-Fit Jeans</h4>
+        </div>
+      </div>
+      <div class="lk-card lk-card-short">
+        <img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=600&auto=format&fit=crop" alt="Party night look">
+        <div class="lk-card-label">
+          <span>Night Out</span>
+          <h4>Party Shirt</h4>
+        </div>
+      </div>
+      <div class="lk-card lk-card-short">
+        <img src="https://images.unsplash.com/photo-1517438476312-10d79c077509?q=80&w=600&auto=format&fit=crop" alt="Cargo casual look">
+        <div class="lk-card-label">
+          <span>Casual Day</span>
+          <h4>Cargo Pant</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Brand Story ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="brand-story">
+      <div class="bs-image">
+        <img src="https://images.unsplash.com/photo-1604695573706-53170668f6a6?q=80&w=800&auto=format&fit=crop" alt="Kyle Clothing — our story">
+      </div>
+      <div class="bs-content">
+        <span class="bs-eyebrow">✦ Our Story</span>
+        <h2>Made for men who<br><em>mean business</em> — and fun.</h2>
+        <p>Kyle Clothing started in Chennai with a simple belief: great clothes shouldn't cost a fortune. Every piece is sourced for comfort, cut for a real body, and priced so you can build a full wardrobe without wincing.</p>
+        <p>Order on WhatsApp, get personal service, and wear something you actually love.</p>
+        <div class="bs-stats">
+          <div class="bs-stat">
+            <div class="num">2019</div>
+            <div class="lbl">Founded in Chennai</div>
+          </div>
+          <div class="bs-stat">
+            <div class="num">5000+</div>
+            <div class="lbl">Happy customers</div>
+          </div>
+          <div class="bs-stat">
+            <div class="num">40+</div>
+            <div class="lbl">Styles this season</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Style Inspiration Wall ===== -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Style Inspiration</h2>
+        <p class="style-section-sub">Tap any look to explore the collection 📸</p>
+      </div>
+    </div>
+    <div class="style-grid">
+      <div class="style-cell">
+        <img src="https://images.unsplash.com/photo-1589310243389-96a5483213a8?q=80&w=400&auto=format&fit=crop" alt="style 1">
+        <div class="style-cell-label">♡</div>
+      </div>
+      <div class="style-cell">
+        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=400&auto=format&fit=crop" alt="style 2">
+        <div class="style-cell-label">♡</div>
+      </div>
+      <div class="style-cell">
+        <img src="https://images.unsplash.com/photo-1563630423918-b58f07336ac9?q=80&w=400&auto=format&fit=crop" alt="style 3">
+        <div class="style-cell-label">♡</div>
+      </div>
+      <div class="style-cell">
+        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=400&auto=format&fit=crop" alt="style 4">
+        <div class="style-cell-label">♡</div>
+      </div>
+      <div class="style-cell">
+        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop" alt="style 5">
+        <div class="style-cell-label">♡</div>
+      </div>
+      <div class="style-cell">
+        <img src="https://images.unsplash.com/photo-1622445275576-721325763afe?q=80&w=400&auto=format&fit=crop" alt="style 6">
+        <div class="style-cell-label">♡</div>
+      </div>
+      <div class="style-cell">
+        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=400&auto=format&fit=crop" alt="style 7">
+        <div class="style-cell-label">♡</div>
+      </div>
+      <div class="style-cell">
+        <img src="https://images.unsplash.com/photo-1475178626620-a4d074967452?q=80&w=400&auto=format&fit=crop" alt="style 8">
+        <div class="style-cell-label">♡</div>
+      </div>
+      <div class="style-cell">
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=400&auto=format&fit=crop" alt="style 9">
+        <div class="style-cell-label">♡</div>
+      </div>
+      <div class="style-cell">
+        <img src="https://images.unsplash.com/photo-1604695573706-53170668f6a6?q=80&w=400&auto=format&fit=crop" alt="style 10">
+        <div class="style-cell-label">♡</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="promo-band" id="story">
+  <div class="wrap">
+    <div class="pb-text">
+      <h2>Order straight to WhatsApp.</h2>
+      <p>Add what you like to the cart, hit checkout, and your order list lands directly in our WhatsApp — we'll confirm size, delivery, and payment with you there.</p>
+    </div>
+    <button class="btn btn-primary" onclick="document.getElementById('cartOpenBtn').click()">Open My Cart →</button>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Kyle Clothing</a>
+        <p>Men's shirts and pants, picked for fit and finish. Order on WhatsApp, no account needed.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-pill" title="Instagram">IG</a>
+          <a href="#" class="social-pill" title="Facebook">FB</a>
+          <a href="https://wa.me/919894898771" class="social-pill" title="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="#shirts">Checked Shirts</a></li>
+          <li><a href="#shirts">Formal Shirts</a></li>
+          <li><a href="#pants">Cargo Pants</a></li>
+          <li><a href="#pants">Jeans</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Help</h5>
+        <ul>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="https://wa.me/919894898771" target="_blank">WhatsApp: +91 98948 98771</a></li>
+          <li><a href="mailto:hello@kyleclothing.com">hello@kyleclothing.com</a></li>
+          <li><a href="#">Chennai, India</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kyle Clothing. All rights reserved.</span>
+      <div class="footer-badges">
+        <span class="f-badge">🔒 SECURE</span>
+        <span class="f-badge">✅ AUTHENTIC</span>
+        <span class="f-badge">💬 WHATSAPP</span>
+      </div>
+      <span>Order placed here is confirmed over WhatsApp.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Cart Drawer ===== -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close" id="cartCloseBtn" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span class="amt" id="cartSubtotal">₹0</span>
+    </div>
+    <button class="whatsapp-btn" id="whatsappCheckout">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.28a8.93 8.93 0 0 0 4.28 1.09h.04a8.94 8.94 0 0 0 6.55-15.5ZM12.05 19.4h-.03a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.81.97.94-2.74-.18-.28a7.42 7.42 0 0 1-1.14-3.95 7.42 7.42 0 0 1 12.66-5.25 7.36 7.36 0 0 1 2.18 5.27 7.42 7.42 0 0 1-7.43 7.18Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.07-.35-.11-.5.11-.15.22-.58.73-.71.88-.13.15-.26.16-.48.05-.22-.11-1.4-.52-2.32-2.13-.35-.6.35-.55.99-1.84.11-.22.06-.41-.03-.57-.09-.16-.46-1.11-.63-1.5-.16-.39-.33-.34-.46-.35h-.4c-.13 0-.34.05-.52.27-.18.22-.7.69-.7 1.67 0 .98.71 1.93.81 2.06.1.13 1.39 2.12 3.37 2.89 1.66.64 2 .55 2.36.49.37-.06 1.13-.46 1.29-.91.16-.45.16-.83.11-.91-.05-.08-.18-.13-.4-.24Z"/></svg>
+      Checkout on WhatsApp
+    </button>
+    <div class="cart-note">You'll review sizes & delivery with us on WhatsApp before paying.</div>
+  </div>
+</aside>
+
+<div class="toast" id="toast">Added to cart</div>
+
+<script>
+(function(){
+
+  // ===== Shop config =====
+  var WHATSAPP_NUMBER = "919894898771"; // +91 98948 98771
+
+  // ===== Product catalog =====
+  var PRODUCTS = [
+    { id:"sh1", type:"shirt", cat:"checked", name:"Charcoal Check Shirt", price:1099, oldPrice:null, img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=500&auto=format&fit=crop", badge:"New" },
+    { id:"sh2", type:"shirt", cat:"checked", name:"Rust Brushed Flannel Check", price:1199, oldPrice:1399, img:"https://images.unsplash.com/photo-1589310243389-96a5483213a8?q=80&w=500&auto=format&fit=crop", badge:null },
+    { id:"sh3", type:"shirt", cat:"formal", name:"Sky Blue Formal Shirt", price:999, oldPrice:null, img:"https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=500&auto=format&fit=crop", badge:null },
+    { id:"sh4", type:"shirt", cat:"formal", name:"White Slim-Fit Formal Shirt", price:1049, oldPrice:null, img:"https://images.unsplash.com/photo-1563630423918-b58f07336ac9?q=80&w=500&auto=format&fit=crop", badge:"Bestseller" },
+    { id:"sh5", type:"shirt", cat:"party", name:"Black Satin Party Shirt", price:1399, oldPrice:1699, img:"https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=500&auto=format&fit=crop", badge:null },
+    { id:"sh6", type:"shirt", cat:"party", name:"Maroon Printed Party Shirt", price:1299, oldPrice:null, img:"https://images.unsplash.com/photo-1604695573706-53170668f6a6?q=80&w=500&auto=format&fit=crop", badge:"New" },
+    { id:"sh7", type:"shirt", cat:"casual", name:"Olive Oxford Casual Shirt", price:949, oldPrice:null, img:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=500&auto=format&fit=crop", badge:null },
+    { id:"sh8", type:"shirt", cat:"casual", name:"Beige Linen Casual Shirt", price:1149, oldPrice:null, img:"https://images.unsplash.com/photo-1622445275576-721325763afe?q=80&w=500&auto=format&fit=crop", badge:null },
+    { id:"pn1", type:"pant", cat:"cargo", name:"Olive Six-Pocket Cargo", price:1399, oldPrice:1599, img:"https://images.unsplash.com/photo-1517438476312-10d79c077509?q=80&w=500&auto=format&fit=crop", badge:"New" },
+    { id:"pn2", type:"pant", cat:"cargo", name:"Black Tapered Cargo Pant", price:1349, oldPrice:null, img:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=500&auto=format&fit=crop", badge:null },
+    { id:"pn3", type:"pant", cat:"jeans", name:"Indigo Slim-Fit Jeans", price:1499, oldPrice:null, img:"https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=500&auto=format&fit=crop", badge:"Bestseller" },
+    { id:"pn4", type:"pant", cat:"jeans", name:"Stone Wash Straight Jeans", price:1599, oldPrice:1899, img:"https://images.unsplash.com/photo-1475178626620-a4d074967452?q=80&w=500&auto=format&fit=crop", badge:null },
+    { id:"pn5", type:"pant", cat:"joggers", name:"Charcoal Fleece Joggers", price:899, oldPrice:null, img:"https://images.unsplash.com/photo-1552902865-b72c031ac5ea?q=80&w=500&auto=format&fit=crop", badge:"New" },
+    { id:"pn6", type:"pant", cat:"joggers", name:"Grey Marl Track Joggers", price:849, oldPrice:999, img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=500&auto=format&fit=crop", badge:null },
+    { id:"pn7", type:"pant", cat:"trousers", name:"Navy Formal Trouser", price:1249, oldPrice:null, img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=500&auto=format&fit=crop", badge:null },
+    { id:"pn8", type:"pant", cat:"trousers", name:"Grey Slim Formal Trouser", price:1199, oldPrice:null, img:"https://images.unsplash.com/photo-1594633313068-2bf7c5f1c3c0?q=80&w=500&auto=format&fit=crop", badge:null }
+  ];
+
+  var cart = {};
+
+  function fmt(n){ return "₹" + n.toLocaleString("en-IN"); }
+  function getProduct(id){
+    for (var i=0;i<PRODUCTS.length;i++){ if (PRODUCTS[i].id === id) return PRODUCTS[i]; }
+    return null;
+  }
+
+  function cardHTML(p){
+    var badgeClass = p.badge === "New" ? "badge badge-new" : (p.badge === "Bestseller" ? "badge badge-bestseller" : "badge badge-new");
+    var badge = p.badge ? '<span class="'+badgeClass+'">'+p.badge+'</span>' : '';
+    var discountPct = '';
+    var oldPriceHTML = '';
+    if (p.oldPrice) {
+      var pct = Math.round((p.oldPrice - p.price) / p.oldPrice * 100);
+      oldPriceHTML = '<span class="price-old">'+fmt(p.oldPrice)+'</span>';
+      discountPct = '<span class="discount-pct">('+pct+'% OFF)</span>';
+    }
+    var inCart = cart[p.id] ? true : false;
+    return (
+      '<div class="product-card" data-id="'+p.id+'">' +
+        '<div class="product-photo">' +
+          badge +
+          '<button class="wish-btn" title="Wishlist">♡</button>' +
+          '<img src="'+p.img+'" alt="'+p.name+'">' +
+          '<button class="quick-add'+(inCart?' added':'')+'" data-add="'+p.id+'">'+(inCart ? '✓ Added' : '+ Quick Add')+'</button>' +
+        '</div>' +
+        '<div class="product-info">' +
+          '<span class="p-type">'+(p.type==="shirt"?"Shirt":"Pant")+'</span>' +
+          '<h4>'+p.name+'</h4>' +
+          '<div class="price-row"><span class="price">'+fmt(p.price)+'</span>'+oldPriceHTML+discountPct+'</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function renderGrid(gridId, type, filter){
+    var grid = document.getElementById(gridId);
+    var items = PRODUCTS.filter(function(p){
+      return p.type === type && (filter === "all" || p.cat === filter);
+    });
+    if (items.length === 0){
+      grid.innerHTML = '<div class="no-results">No items in this category yet.</div>';
+      return;
+    }
+    grid.innerHTML = items.map(cardHTML).join("");
+  }
+
+  var shirtFilter = "all";
+  var pantFilter = "all";
+
+  function renderShirts(){ renderGrid("shirtGrid", "shirt", shirtFilter); }
+  function renderPants(){ renderGrid("pantGrid", "pant", pantFilter); }
+
+  function wireFilters(containerId, onChange){
+    var container = document.getElementById(containerId);
+    container.addEventListener("click", function(e){
+      var chip = e.target.closest(".filter-chip");
+      if (!chip) return;
+      var chips = container.querySelectorAll(".filter-chip");
+      chips.forEach(function(c){ c.classList.remove("active"); });
+      chip.classList.add("active");
+      onChange(chip.getAttribute("data-cat"));
+    });
+  }
+
+  wireFilters("shirtFilters", function(cat){ shirtFilter = cat; renderShirts(); });
+  wireFilters("pantFilters", function(cat){ pantFilter = cat; renderPants(); });
+
+  document.querySelectorAll(".category-card").forEach(function(card){
+    card.addEventListener("click", function(){
+      var filterVal = card.getAttribute("data-filter");
+      var shirtCats = ["checked","formal","party","casual"];
+      if (shirtCats.indexOf(filterVal) > -1){
+        shirtFilter = filterVal;
+        document.querySelectorAll("#shirtFilters .filter-chip").forEach(function(c){
+          c.classList.toggle("active", c.getAttribute("data-cat") === filterVal);
+        });
+        renderShirts();
+        document.getElementById("shirts").scrollIntoView({behavior:"smooth"});
+      } else {
+        pantFilter = filterVal;
+        document.querySelectorAll("#pantFilters .filter-chip").forEach(function(c){
+          c.classList.toggle("active", c.getAttribute("data-cat") === filterVal);
+        });
+        renderPants();
+        document.getElementById("pants").scrollIntoView({behavior:"smooth"});
+      }
+    });
+  });
+
+  document.body.addEventListener("click", function(e){
+    var btn = e.target.closest("[data-add]");
+    if (!btn) return;
+    var id = btn.getAttribute("data-add");
+    addToCart(id);
+    btn.textContent = "✓ Added";
+    btn.classList.add("added");
+  });
+
+  function addToCart(id){
+    cart[id] = (cart[id] || 0) + 1;
+    updateCartUI();
+    showToast(getProduct(id).name + " added to cart");
+  }
+
+  function removeFromCart(id){
+    delete cart[id];
+    updateCartUI();
+  }
+
+  function changeQty(id, delta){
+    if (!cart[id]) return;
+    cart[id] += delta;
+    if (cart[id] <= 0){ delete cart[id]; }
+    updateCartUI();
+  }
+
+  function updateCartUI(){
+    var ids = Object.keys(cart);
+    var totalQty = ids.reduce(function(sum,id){ return sum + cart[id]; }, 0);
+    document.getElementById("cartCount").textContent = totalQty;
+
+    var itemsEl = document.getElementById("cartItems");
+    var footerEl = document.getElementById("cartFooter");
+
+    if (ids.length === 0){
+      itemsEl.innerHTML = '<div class="cart-empty">Your cart is empty.<br>Add a few shirts or pants to get started.</div>';
+      footerEl.style.display = "none";
+    } else {
+      footerEl.style.display = "block";
+      var subtotal = 0;
+      itemsEl.innerHTML = ids.map(function(id){
+        var p = getProduct(id);
+        var qty = cart[id];
+        subtotal += p.price * qty;
+        return (
+          '<div class="cart-item" data-id="'+id+'">' +
+            '<img src="'+p.img+'" alt="'+p.name+'">' +
+            '<div class="ci-info">' +
+              '<h4>'+p.name+'</h4>' +
+              '<div class="ci-meta">'+(p.type==="shirt"?"Shirt":"Pant")+' · '+p.cat+'</div>' +
+              '<div class="ci-price">'+fmt(p.price)+'</div>' +
+              '<div class="qty-row">' +
+                '<button class="qty-btn" data-qty-down="'+id+'">−</button>' +
+                '<span class="qty-val">'+qty+'</span>' +
+                '<button class="qty-btn" data-qty-up="'+id+'">+</button>' +
+                '<button class="ci-remove" data-remove="'+id+'">Remove</button>' +
+              '</div>' +
+            '</div>' +
+          '</div>'
+        );
+      }).join("");
+      document.getElementById("cartSubtotal").textContent = fmt(subtotal);
+    }
+
+    document.querySelectorAll("[data-add]").forEach(function(btn){
+      var id = btn.getAttribute("data-add");
+      if (cart[id]){
+        btn.textContent = "✓ Added";
+        btn.classList.add("added");
+      } else {
+        btn.textContent = "+ Quick Add";
+        btn.classList.remove("added");
+      }
+    });
+  }
+
+  document.getElementById("cartItems").addEventListener("click", function(e){
+    var up = e.target.closest("[data-qty-up]");
+    var down = e.target.closest("[data-qty-down]");
+    var rem = e.target.closest("[data-remove]");
+    if (up) changeQty(up.getAttribute("data-qty-up"), 1);
+    if (down) changeQty(down.getAttribute("data-qty-down"), -1);
+    if (rem) removeFromCart(rem.getAttribute("data-remove"));
+  });
+
+  var drawer = document.getElementById("cartDrawer");
+  var overlay = document.getElementById("overlay");
+
+  function openCart(){ drawer.classList.add("open"); overlay.classList.add("open"); }
+  function closeCart(){ drawer.classList.remove("open"); overlay.classList.remove("open"); }
+
+  document.getElementById("cartOpenBtn").addEventListener("click", openCart);
+  document.getElementById("cartCloseBtn").addEventListener("click", closeCart);
+  overlay.addEventListener("click", closeCart);
+
+  var toastTimer = null;
+  function showToast(msg){
+    var toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove("show"); }, 1800);
+  }
+
+  document.getElementById("whatsappCheckout").addEventListener("click", function(){
+    var ids = Object.keys(cart);
+    if (ids.length === 0) return;
+
+    var lines = [];
+    lines.push("Hi! I'd like to order the following from Kyle Clothing:");
+    lines.push("");
+    var subtotal = 0;
+    ids.forEach(function(id, idx){
+      var p = getProduct(id);
+      var qty = cart[id];
+      var lineTotal = p.price * qty;
+      subtotal += lineTotal;
+      lines.push((idx+1)+". "+p.name+" ("+p.cat+") x"+qty+" — "+fmt(lineTotal));
+    });
+    lines.push("");
+    lines.push("Subtotal: "+fmt(subtotal));
+    lines.push("");
+    lines.push("Please confirm sizes & delivery. Thank you!");
+
+    var message = encodeURIComponent(lines.join("\n"));
+    var url = "https://wa.me/"+WHATSAPP_NUMBER+"?text="+message;
+    window.open(url, "_blank");
+  });
+
+  renderShirts();
+  renderPants();
+  updateCartUI();
+
+})();
+</script>
+
+</body>
+</html>
