@@ -1,1 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kyle clothing — Everyday Ethnic Wear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
 
+  :root{
+    --stone:#F7F4EF;
+    --sand:#EBE5D8;
+    --ink:#1C1A17;
+    --ink-soft:#5B5650;
+    --clay:#B5694A;
+    --olive:#4A4A3A;
+    --line:#D9D1C1;
+    --white:#FFFEFC;
+
+    --display: 'Fraunces', serif;
+    --body: 'Inter', sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--stone);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{max-width:100%;display:block;}
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  /* ===== Utility tag style — used for category labels, mimics a garment tag ===== */
+  .tag-label{
+    font-family:var(--body);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+  }
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(247,244,239,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 40px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+
+  .logo{
+    font-family:var(--display);
+    font-size:26px;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+
+  .nav-links{
+    display:flex;
+    gap:36px;
+    list-style:none;
+  }
+
+  .nav-links a{
+    font-size:14px;
+    font-weight:500;
+    color:var(--ink-soft);
+    transition:color 0.2s ease;
+    position:relative;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible{
+    color:var(--ink);
+  }
+
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:1px;
+    background:var(--clay);
+    transition:width 0.25s ease;
+  }
+
+  .nav-links a:hover::after{
+    width:100%;
+  }
+
+  .nav-actions{
+    display:flex;
+    align-items:center;
+    gap:22px;
+  }
+
+  .icon-btn{
+    background:none;
+    border:none;
+    cursor:pointer;
+    color:var(--ink);
+    font-size:14px;
+    font-weight:500;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .cart-count{
+    background:var(--clay);
+    color:var(--white);
+    border-radius:50%;
+    width:18px;
+    height:18px;
+    font-size:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+  }
+
+  .menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    flex-direction:column;
+    gap:5px;
+  }
+
+  .menu-toggle span{
+    width:22px;
+    height:1.5px;
+    background:var(--ink);
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    padding:90px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+  }
+
+  .hero-eyebrow{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+  }
+
+  .hero-eyebrow .dot{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--clay);
+  }
+
+  .hero h1{
+    font-family:var(--display);
+    font-size:clamp(40px, 5.6vw, 72px);
+    font-weight:500;
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    margin-bottom:24px;
+  }
+
+  .hero h1 em{
+    font-style:italic;
+    font-weight:500;
+    color:var(--clay);
+  }
+
+  .hero p.sub{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:440px;
+    margin-bottom:36px;
+  }
+
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    align-items:center;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 30px;
+    font-size:14px;
+    font-weight:600;
+    border-radius:2px;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:all 0.25s ease;
+    letter-spacing:0.01em;
+  }
+
+  .btn-primary{
+    background:var(--ink);
+    color:var(--stone);
+  }
+
+  .btn-primary:hover{
+    background:var(--clay);
+  }
+
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--ink);
+  }
+
+  .btn-ghost:hover{
+    background:var(--ink);
+    color:var(--stone);
+  }
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:4px;
+    overflow:hidden;
+    background:linear-gradient(160deg,#DCD3C0,#C9BDA3);
+  }
+
+  .hero-visual img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .hero-visual .float-tag{
+    position:absolute;
+    bottom:24px;
+    left:24px;
+    background:var(--white);
+    padding:14px 18px;
+    border-radius:2px;
+    box-shadow:0 12px 30px rgba(28,26,23,0.18);
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+
+  .float-tag .swatch{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:var(--clay);
+    flex-shrink:0;
+  }
+
+  .float-tag .ft-title{
+    font-size:13px;
+    font-weight:600;
+  }
+
+  .float-tag .ft-sub{
+    font-size:11px;
+    color:var(--ink-soft);
+  }
+
+  /* fabric swatch strip */
+  .swatch-strip{
+    display:flex;
+    gap:10px;
+    margin-top:48px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+
+  .swatch-strip-item{
+    flex:1;
+    text-align:left;
+  }
+
+  .swatch-strip-item .num{
+    font-family:var(--display);
+    font-size:22px;
+    color:var(--clay);
+    margin-bottom:2px;
+  }
+
+  .swatch-strip-item .lbl{
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+
+  /* ===== Section heading pattern ===== */
+  .section{
+    padding:90px 0;
+  }
+
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:48px;
+    gap:24px;
+  }
+
+  .section-head h2{
+    font-family:var(--display);
+    font-size:clamp(28px, 3.4vw, 42px);
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+
+  .section-head .view-all{
+    font-size:13px;
+    font-weight:600;
+    border-bottom:1px solid var(--ink);
+    padding-bottom:3px;
+    white-space:nowrap;
+  }
+
+  .section-alt{
+    background:var(--sand);
+  }
+
+  /* ===== Category strip ===== */
+  .category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+
+  .category-card{
+    position:relative;
+    aspect-ratio:3/4;
+    border-radius:3px;
+    overflow:hidden;
+    background:#DCD3C0;
+    cursor:pointer;
+  }
+
+  .category-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform 0.5s ease;
+  }
+
+  .category-card:hover img{
+    transform:scale(1.06);
+  }
+
+  .category-card::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(28,26,23,0.65), transparent 55%);
+  }
+
+  .category-card .cc-label{
+    position:absolute;
+    bottom:18px;
+    left:18px;
+    color:var(--white);
+    z-index:2;
+  }
+
+  .category-card .cc-label .tag-label{
+    color:#E8E2D6;
+  }
+
+  .category-card .cc-label h3{
+    font-family:var(--display);
+    font-size:21px;
+    font-weight:500;
+    margin-top:4px;
+  }
+
+  /* ===== Product grid — tag-styled cards (signature element) ===== */
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:26px 22px;
+  }
+
+  .product-card{
+    position:relative;
+  }
+
+  .product-photo{
+    position:relative;
+    aspect-ratio:3/4;
+    border-radius:3px;
+    overflow:hidden;
+    background:#E2DACB;
+    margin-bottom:14px;
+  }
+
+  .product-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform 0.45s ease;
+  }
+
+  .product-card:hover .product-photo img{
+    transform:scale(1.05);
+  }
+
+  .product-photo .quick-add{
+    position:absolute;
+    bottom:12px;
+    left:12px;
+    right:12px;
+    background:var(--white);
+    text-align:center;
+    padding:11px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.04em;
+    border-radius:2px;
+    opacity:0;
+    transform:translateY(8px);
+    transition:all 0.25s ease;
+    cursor:pointer;
+  }
+
+  .product-card:hover .quick-add{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .product-photo .badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:var(--olive);
+    color:var(--white);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    padding:5px 9px;
+    border-radius:2px;
+    text-transform:uppercase;
+  }
+
+  /* the "garment tag" detail under each product — perforated stitch line */
+  .product-info{
+    border-top:1px dashed var(--line);
+    padding-top:12px;
+    position:relative;
+  }
+
+  .product-info::before{
+    content:'';
+    position:absolute;
+    top:-1px;
+    left:0;
+    width:14px;
+    height:14px;
+    background:var(--stone);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    border:1px dashed var(--line);
+  }
+
+  .product-info::after{
+    content:'';
+    position:absolute;
+    top:-1px;
+    right:0;
+    width:14px;
+    height:14px;
+    background:var(--stone);
+    border-radius:50%;
+    transform:translate(50%,-50%);
+    border:1px dashed var(--line);
+  }
+
+  .product-info h4{
+    font-size:14.5px;
+    font-weight:600;
+    margin-top:2px;
+    margin-bottom:4px;
+  }
+
+  .product-info .price-row{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+  }
+
+  .product-info .price{
+    font-family:var(--display);
+    font-size:16px;
+    font-weight:600;
+  }
+
+  .product-info .price-old{
+    font-size:13px;
+    color:var(--ink-soft);
+    text-decoration:line-through;
+  }
+
+  /* ===== Story / about strip ===== */
+  .story{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:70px;
+    align-items:center;
+  }
+
+  .story-img{
+    aspect-ratio:1/1.05;
+    border-radius:3px;
+    overflow:hidden;
+    background:#DCD3C0;
+  }
+
+  .story-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .story-content h2{
+    font-family:var(--display);
+    font-size:clamp(28px,3.2vw,38px);
+    font-weight:500;
+    line-height:1.18;
+    margin:14px 0 20px;
+  }
+
+  .story-content p{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    max-width:480px;
+    margin-bottom:16px;
+  }
+
+  .story-stats{
+    display:flex;
+    gap:40px;
+    margin-top:32px;
+  }
+
+  .story-stats div .num{
+    font-family:var(--display);
+    font-size:30px;
+    font-weight:500;
+    color:var(--clay);
+  }
+
+  .story-stats div .lbl{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+
+  /* ===== Newsletter band ===== */
+  .newsletter{
+    background:var(--ink);
+    color:var(--stone);
+    border-radius:4px;
+    padding:64px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+  }
+
+  .newsletter h2{
+    font-family:var(--display);
+    font-size:clamp(26px,3vw,34px);
+    font-weight:500;
+    max-width:380px;
+    line-height:1.2;
+  }
+
+  .newsletter-form{
+    display:flex;
+    gap:10px;
+    flex:1;
+    max-width:420px;
+  }
+
+  .newsletter-form input{
+    flex:1;
+    background:transparent;
+    border:1px solid rgba(247,244,239,0.35);
+    color:var(--stone);
+    padding:14px 16px;
+    font-size:14px;
+    border-radius:2px;
+    font-family:var(--body);
+  }
+
+  .newsletter-form input::placeholder{
+    color:rgba(247,244,239,0.5);
+  }
+
+  .newsletter-form input:focus-visible{
+    outline:1px solid var(--clay);
+  }
+
+  .newsletter-form button{
+    background:var(--clay);
+    color:var(--white);
+    border:none;
+    padding:14px 24px;
+    font-size:13px;
+    font-weight:600;
+    border-radius:2px;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background 0.2s ease;
+  }
+
+  .newsletter-form button:hover{
+    background:#9C5639;
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    border-top:1px solid var(--line);
+    padding:64px 0 30px;
+  }
+
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:50px;
+  }
+
+  .footer-brand .logo{
+    margin-bottom:14px;
+  }
+
+  .footer-brand p{
+    color:var(--ink-soft);
+    font-size:14px;
+    max-width:280px;
+  }
+
+  .footer-col h5{
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:18px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+
+  .footer-col ul{
+    list-style:none;
+  }
+
+  .footer-col li{
+    margin-bottom:11px;
+  }
+
+  .footer-col a{
+    color:var(--ink-soft);
+    font-size:14px;
+    transition:color 0.2s ease;
+  }
+
+  .footer-col a:hover{
+    color:var(--clay);
+  }
+
+  .footer-bottom{
+    border-top:1px solid var(--line);
+    padding-top:24px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:420px;}
+    .category-grid{grid-template-columns:repeat(2,1fr);}
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+    .story{grid-template-columns:1fr;gap:36px;}
+    .story-img{max-width:380px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .newsletter{flex-direction:column;align-items:flex-start;}
+    .newsletter-form{width:100%;}
+  }
+
+  @media (max-width:760px){
+    .wrap{padding:0 22px;}
+    .nav{padding:18px 22px;}
+    .nav-links{display:none;}
+    .menu-toggle{display:flex;}
+    .swatch-strip{flex-wrap:wrap;}
+    .swatch-strip-item{flex:1 1 45%;}
+    .category-grid{grid-template-columns:1fr 1fr;}
+    .product-grid{grid-template-columns:1fr 1fr;}
+    .section{padding:60px 0;}
+    .section-head{flex-direction:column;align-items:flex-start;gap:12px;}
+    .newsletter{padding:40px 26px;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:30px;}
+    .footer-bottom{flex-direction:column;gap:8px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">Vastra</a>
+    <ul class="nav-links">
+      <li><a href="#categories">Shop</a></li>
+      <li><a href="#new">New In</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" aria-label="Search">Search</button>
+      <button class="icon-btn" aria-label="Cart">Cart <span class="cart-count">2</span></button>
+    </div>
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          <span class="tag-label">New Season Drop</span>
+        </div>
+        <h1>Everyday wear,<br>made with <em>intention.</em></h1>
+        <p class="sub">Kurtis, trousers and layers cut for real movement — quiet colours, honest fabric, and details you'll notice on the second wear, not just the first.</p>
+        <div class="hero-actions">
+          <a href="#categories" class="btn btn-primary">Shop the Collection</a>
+          <a href="#story" class="btn btn-ghost">Our Story</a>
+        </div>
+
+        <div class="swatch-strip">
+          <div class="swatch-strip-item">
+            <div class="num">120+</div>
+            <div class="lbl">Styles in store</div>
+          </div>
+          <div class="swatch-strip-item">
+            <div class="num">100%</div>
+            <div class="lbl">Cotton &amp; linen blends</div>
+          </div>
+          <div class="swatch-strip-item">
+            <div class="num">4.8</div>
+            <div class="lbl">Average rating</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=900&auto=format&fit=crop" alt="Model wearing a neutral-toned kurti set">
+        <div class="float-tag">
+          <span class="swatch"></span>
+          <div>
+            <div class="ft-title">Sage Cotton Kurti</div>
+            <div class="ft-sub">₹1,499</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="categories">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Shop by category</h2>
+      <a href="#" class="view-all">View all</a>
+    </div>
+    <div class="category-grid">
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=600&auto=format&fit=crop" alt="Kurtis category">
+        <div class="cc-label">
+          <span class="tag-label">12 Styles</span>
+          <h3>Kurtis</h3>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=600&auto=format&fit=crop" alt="Trousers category">
+        <div class="cc-label">
+          <span class="tag-label">9 Styles</span>
+          <h3>Trousers</h3>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1617952385804-9c6c1e4d4d6e?q=80&w=600&auto=format&fit=crop" alt="Co-ord sets category">
+        <div class="cc-label">
+          <span class="tag-label">7 Styles</span>
+          <h3>Co-ord Sets</h3>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1561052967-7b1c8f8b8b1e?q=80&w=600&auto=format&fit=crop" alt="Dupattas category">
+        <div class="cc-label">
+          <span class="tag-label">15 Styles</span>
+          <h3>Dupattas</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="new">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>New in this week</h2>
+      <a href="#" class="view-all">View all</a>
+    </div>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-photo">
+          <span class="badge">New</span>
+          <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=500&auto=format&fit=crop" alt="Sage cotton kurti">
+          <div class="quick-add">Quick Add</div>
+        </div>
+        <div class="product-info">
+          <span class="tag-label">Kurti</span>
+          <h4>Sage Cotton Straight Kurti</h4>
+          <div class="price-row">
+            <span class="price">₹1,499</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <img src="https://images.unsplash.com/photo-1594633313068-2bf7c5f1c3c0?q=80&w=500&auto=format&fit=crop" alt="Wide-leg trousers">
+          <div class="quick-add">Quick Add</div>
+        </div>
+        <div class="product-info">
+          <span class="tag-label">Trouser</span>
+          <h4>Stone Wide-Leg Trouser</h4>
+          <div class="price-row">
+            <span class="price">₹1,199</span>
+            <span class="price-old">₹1,499</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <span class="badge">Bestseller</span>
+          <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=500&auto=format&fit=crop" alt="Co-ord set">
+          <div class="quick-add">Quick Add</div>
+        </div>
+        <div class="product-info">
+          <span class="tag-label">Co-ord</span>
+          <h4>Clay Two-Piece Co-ord</h4>
+          <div class="price-row">
+            <span class="price">₹2,299</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <img src="https://images.unsplash.com/photo-1622445275576-721325763afe?q=80&w=500&auto=format&fit=crop" alt="Printed kurti">
+          <div class="quick-add">Quick Add</div>
+        </div>
+        <div class="product-info">
+          <span class="tag-label">Kurti</span>
+          <h4>Ivory Block-Print Kurti</h4>
+          <div class="price-row">
+            <span class="price">₹1,699</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="story">
+  <div class="wrap">
+    <div class="story">
+      <div class="story-img">
+        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=700&auto=format&fit=crop" alt="Fabric being hand-finished">
+      </div>
+      <div class="story-content">
+        <span class="tag-label">Our Story</span>
+        <h2>Clothes that start with the fabric, not the trend.</h2>
+        <p>Vastra began as a small tailoring table and a simple rule: choose the cloth first, let the cut follow. Every kurti and trouser in this collection is finished by hand in small batches, so quality stays consistent even as the catalogue grows.</p>
+        <p>No rush deliveries, no mystery fabric blends — just clothes meant to be worn often and last.</p>
+        <div class="story-stats">
+          <div>
+            <div class="num">6</div>
+            <div class="lbl">Years tailoring</div>
+          </div>
+          <div>
+            <div class="num">3.2k</div>
+            <div class="lbl">Happy customers</div>
+          </div>
+          <div>
+            <div class="num">0</div>
+            <div class="lbl">Synthetic blends</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="newsletter">
+      <h2>Get first access to new drops and restocks.</h2>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed';">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Vastra</a>
+        <p>Everyday ethnic wear, cut with intention. Designed and finished in small batches.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="#">Kurtis</a></li>
+          <li><a href="#">Trousers</a></li>
+          <li><a href="#">Co-ord Sets</a></li>
+          <li><a href="#">New In</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Help</h5>
+        <ul>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@vastra.com">hello@vastra.com</a></li>
+          <li><a href="tel:+910000000000">+91 00000 00000</a></li>
+          <li><a href="#">Chennai, India</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Vastra. All rights reserved.</span>
+      <span>Made with care, stitched by hand.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
